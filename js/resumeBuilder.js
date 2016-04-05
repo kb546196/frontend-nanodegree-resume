@@ -26,10 +26,11 @@ var formattedWelcome = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
 
 //prepend bio info 
 
-$ ("#header").prepend(formattedWelcome); 
+
 $("#header").prepend(formattedRole);
 $ ("#header").prepend(formattedName);
-$ ("#header").prepend(formattedPic); 
+$ ("#header").append(formattedPic); 
+$ ("#header").append(formattedWelcome); 
 $ ("#topContacts").append(formattedLocation);
 $ ("#topContacts").append(formattedEmail);
 $ ("#topContacts").append(formattedTwitter); 
@@ -42,7 +43,7 @@ for (i = 0; i < 4; i++) {
 	$("#skills").append(formattedSkill);
 }
 
-//internationalize name 
+//internationalize name button and function
 function inName(name) {
 	name = bio.name.trim().split(" ");
 	console.log(name);
@@ -57,7 +58,6 @@ $("#main").append(internationalizeButton);
 
 
 //work info 
-
 var work = {
  	"jobs" : [
  		{
@@ -113,6 +113,23 @@ function displayWork () {
 }
 
 displayWork();
+
+
+function locationizer(work_obj)   { 
+	var locationArray = [];
+
+	for (job in work_obj.jobs) {
+		var newLocation = work_obj.jobs[job].location; 
+		locationArray.push(newLocation);
+	}
+
+	return locationArray;
+}
+
+console.log(locationizer(work));
+
+//to see the map
+$("#mapDiv").append(googleMap);
 
 var projects = {
 	"projects" : [
