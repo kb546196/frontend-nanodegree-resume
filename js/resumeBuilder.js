@@ -148,7 +148,7 @@ var education = {
 	"onlineCourses": [
 		{
 			"school": "Udacity", 
-			"course": "Front End Web Design",
+			"title": "Front End Web Design",
 			"dates": 2016, 
 			"url" : "www.udacity.com" 
 		}
@@ -177,3 +177,24 @@ function displaySchools () {
 }
 
 displaySchools();
+
+function displayCourses () {
+	for (course in education.onlineCourses) {
+		$("#education").append(HTMLonlineClasses);
+		
+		var formattedOnlineSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses[course].school);
+		$("#education").append(formattedOnlineSchool); 
+
+		var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
+		$("#education").append(formattedOnlineTitle);
+
+		var formattedOnlineDates = HTMLonlineDates.replace("%data%",education.onlineCourses[course].dates);
+		$("#education").append(formattedOnlineDates);
+
+		var formattedOnlineURL = HTMLonlineURL.replace("%data%",education.onlineCourses[course].url); 
+		$("#education").append(formattedOnlineURL);
+	}
+}
+
+displayCourses();
+
