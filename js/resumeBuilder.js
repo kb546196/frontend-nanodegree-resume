@@ -128,20 +128,20 @@ function displayProjects () {
 
 displayProjects();
 
- var education = {
+var education = {
 	"schools": [
 		{
 			"name": "University of Sheffield",
 			"location": "Sheffield, UK",
 			"degree": "BA",
-			"major": ["English Literature"]
+			"major": ["English Literature"],
 			"dates": "2005-2008"
 		}, 
 		{
 			"name": "Duchess' Community High School",
 			"location": "Alnwick, UK",
 			"degree": "A-levels",
-			"major": ["English Literature", "History", "Classical Civilisations"]
+			"major": ["English Literature", "History", "Classical Civilisations"],
 			"dates": "2003-2005"
 		}
 	],
@@ -155,3 +155,25 @@ displayProjects();
 	]
 }
 
+
+function displaySchools () {
+	for (school in education.schools) {
+		$("#education").append(HTMLschoolStart);
+
+		var formattedSchoolName = HTMLschoolName.replace("%data%",education.schools[school].name);
+		$("#education").append(formattedSchoolName);
+
+		var formattedSchoolDates = HTMLschoolLocation.replace("%data%",education.schools[school].dates);
+		$("#education").append(formattedSchoolDates);		
+
+		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%",education.schools[school].location);
+		$("#education").append(formattedSchoolLocation);
+
+		var formattedDegree = HTMLschoolDegree.replace("%data%",education.schools[school].degree);
+		$("#education").append(formattedDegree);	
+
+		var formattedMajor = HTMLschoolMajor.replace("%data%",education.schools[school].major);
+		$("#education").append(formattedMajor);	}
+}
+
+displaySchools();
