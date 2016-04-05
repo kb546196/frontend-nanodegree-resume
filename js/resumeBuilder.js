@@ -23,11 +23,9 @@ var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 var formattedLocation = HTMLworkLocation.replace("%data%", bio.contacts.location);
 var formattedPic = HTMLbioPic.replace("%data%",bio.bioPic);
 var formattedWelcome = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
-var formattedSkills = HTMLskills.replace("%data%",bio.skills);
 
 //prepend bio info 
 
-$ ("#header").prepend(formattedSkills); 
 $ ("#header").prepend(formattedWelcome); 
 $("#header").prepend(formattedRole);
 $ ("#header").prepend(formattedName);
@@ -37,6 +35,12 @@ $ ("#topContacts").append(formattedEmail);
 $ ("#topContacts").append(formattedTwitter); 
 $ ("#topContacts").append(formattedMobile); 
 
+//prepend bioskills
+$("#header").append(HTMLskillsStart); 
+for (i = 0; i < 4; i++) {
+	var formattedSkill = HTMLskills.replace("%data%",bio.skills[i]);
+	$("#skills").append(formattedSkill);
+}
 
 //internationalize name 
 function inName(name) {
