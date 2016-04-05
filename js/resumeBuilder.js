@@ -37,7 +37,7 @@ $ ("#topContacts").append(formattedEmail);
 $ ("#topContacts").append(formattedTwitter); 
 $ ("#topContacts").append(formattedMobile); 
 
-console.log(formattedWelcome);
+
 //work info 
 
 var work = {
@@ -72,6 +72,29 @@ var work = {
  		} 		
  		]
  }
+
+function displayWork () {
+	for (job in work.jobs) {
+		$("#workExperience").append(HTMLworkStart);
+
+		var formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%",work.jobs[job].title);
+		var formattedEmployerTitle = formattedEmployer + formattedTitle; 
+
+		$(".work-entry:last").append (formattedEmployerTitle);
+
+		var formattedworkLocation = HTMLworkLocation.replace("%data%",work.jobs[job].location);
+		$("#workExperience").append(formattedworkLocation);
+
+		var formattedworkDates = HTMLworkDates.replace("%data%",work.jobs[job].dates);
+		$("#workExperience").append(formattedworkDates);
+
+		var formattedworkDescription = HTMLworkDescription.replace("%data%",work.jobs[job].description);
+		$("#workExperience").append(formattedworkDescription)
+	}
+}
+
+displayWork();
 
 var projects = {
 	"projects" : [
