@@ -107,19 +107,42 @@ var projects = {
 	]
 }
 
+function displayProjects () {
+	for (project in projects.projects) {
+		$("#projects").append(HTMLprojectStart);
+
+		var formattedProjectTitle = HTMLprojectTitle.replace("%data%",projects.projects[project].title);
+		$("#projects").append(formattedProjectTitle);
+
+		var formattedProjectDates = HTMLprojectDates.replace("%data%",projects.projects[project].dates);
+		$("#projects").append(formattedProjectDates);
+
+		var formattedProjectDescription = HTMLprojectDescription.replace("%data%",projects.projects[project].description);
+		$("#projects").append(formattedProjectDescription);
+
+		var formattedProjectImages = HTMLprojectImage.replace("%data%",projects.projects[project].images);
+		$("#projects").append(formattedProjectImages);
+
+	}
+}
+
+displayProjects();
+
  var education = {
 	"schools": [
 		{
 			"name": "University of Sheffield",
-			"city": "Sheffield, UK",
+			"location": "Sheffield, UK",
 			"degree": "BA",
 			"major": ["English Literature"]
+			"dates": "2005-2008"
 		}, 
 		{
 			"name": "Duchess' Community High School",
-			"city": "Alnwick, UK",
+			"location": "Alnwick, UK",
 			"degree": "A-levels",
 			"major": ["English Literature", "History", "Classical Civilisations"]
+			"dates": "2003-2005"
 		}
 	],
 	"onlineCourses": [
@@ -131,3 +154,4 @@ var projects = {
 		}
 	]
 }
+
