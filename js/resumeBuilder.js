@@ -14,6 +14,8 @@ var bio = {
 	],
 	"bioPic": "https://thirdwomanrunning.files.wordpress.com/2015/07/kb-small-picture.jpg"
 };
+
+//format and prepend the bio info 
  
 var formattedName = HTMLheaderName.replace("%data%", bio.name); 
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role); 
@@ -23,9 +25,6 @@ var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 var formattedLocation = HTMLworkLocation.replace("%data%", bio.contacts.location);
 var formattedPic = HTMLbioPic.replace("%data%",bio.bioPic);
 var formattedWelcome = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
-
-//prepend bio info 
-
 
 $("#header").prepend(formattedRole);
 $ ("#header").prepend(formattedName);
@@ -91,6 +90,7 @@ var work = {
  		]
  }
 
+//function to display my work history 
 function displayWork () {
 	for (job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
@@ -115,22 +115,7 @@ function displayWork () {
 displayWork();
 
 
-function locationizer(work_obj)   { 
-	var locationArray = [];
-
-	for (job in work_obj.jobs) {
-		var newLocation = work_obj.jobs[job].location; 
-		locationArray.push(newLocation);
-	}
-
-	return locationArray;
-}
-
-console.log(locationizer(work));
-
-//to see the map
-$("#mapDiv").append(googleMap);
-
+//My projects information
 var projects = {
 	"projects" : [
 		{
@@ -141,6 +126,8 @@ var projects = {
 		}
 	]
 }
+
+//function to display projects
 
 function displayProjects () {
 	for (project in projects.projects) {
@@ -164,7 +151,7 @@ function displayProjects () {
 
 displayProjects();
 
-
+//My education info 
 
 var education = {
 	"schools": [
@@ -193,7 +180,7 @@ var education = {
 	]
 }
 
-
+// Function for schools info 
 function displaySchools () {
 	for (school in education.schools) {
 		$("#education").append(HTMLschoolStart);
@@ -216,6 +203,7 @@ function displaySchools () {
 
 displaySchools();
 
+// function to display online courses 
 function displayCourses () {
 	for (course in education.onlineCourses) {
 		$("#education").append(HTMLonlineClasses);
@@ -236,3 +224,17 @@ function displayCourses () {
 
 displayCourses();
 
+//function to collect locations
+function locationizer(work_obj)   { 
+	var locationArray = [];
+
+	for (job in work_obj.jobs) {
+		var newLocation = work_obj.jobs[job].location; 
+		locationArray.push(newLocation);
+	}
+
+	return locationArray;
+}
+
+//to see the map
+$("#mapDiv").append(googleMap);
