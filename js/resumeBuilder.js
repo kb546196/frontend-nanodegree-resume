@@ -1,24 +1,24 @@
 //Bio Info
 var bio = {
-	"name" : "Kate Bull",
+	"name" : "Kate Bullivant",
 	"role" : "Web Developer",
 	"contacts" : {
-		"email" : "k.bull@web.co.uk",
-		"mobile" : "07777777777",
-		"twitter" : "katebull13",
+		"email" : "k.bullivant@hotmail.co.uk",
+		"mobile" : "07792117396",
+		"github" : "kb546196",
 		"location" : "London"
 	},
 	"welcomeMessage" : "Hi!",
 	"skills" : [
-	"Great under pressure","programming","radio production","jouranlism"
+	"Programming","Jouranlism","Lateral thinking","Good under pressure"
 	],
-	"bioPic": "images/fry.jpg"
+	"bioPic": "https://thirdwomanrunning.files.wordpress.com/2015/07/kb-small-picture.jpg"
 };
  
 var formattedName = HTMLheaderName.replace("%data%", bio.name); 
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role); 
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter); 
+var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github); 
 var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile); 
 var formattedLocation = HTMLworkLocation.replace("%data%", bio.contacts.location);
 var formattedPic = HTMLbioPic.replace("%data%",bio.bioPic);
@@ -33,7 +33,7 @@ $ ("#header").append(formattedPic);
 $ ("#header").append(formattedWelcome); 
 $ ("#topContacts").append(formattedLocation);
 $ ("#topContacts").append(formattedEmail);
-$ ("#topContacts").append(formattedTwitter); 
+$ ("#topContacts").append(formattedGitHub); 
 $ ("#topContacts").append(formattedMobile); 
 
 //prepend bioskills
@@ -72,21 +72,21 @@ var work = {
  			"title": "Assistant Producer", 
  			"location": "London",
  			"dates": "May 2014 - September 2014", 
- 			"description": "While I have been at Radio 4 I completed a 4 month attachment as an Assistant Producer on Front Row."
+ 			"description": "While I have been at Radio 4 I completed a 4 month attachment as an Assistant Producer on Front Row. During this time I pitched ideas, recorded, edited and produced programmes"
  		},
 		{		
  			"employer": "BBC, Radio, Bristol", 
  			"title": "Production Management Assistant", 
  			"location": "Bristol",
  			"dates": "June 2011  - September 2011", 
- 			"description": "Worked with Radio 4 team based in Bristol offering admin and production support"
+ 			"description": "Worked with Radio 4 team based in Bristol offering admin and production support on their book programmes, dramas and Any Questions"
  		}, 
 		{		
  			"employer": "BBC, Radio, Events Team", 
  			"title": "Team Assistant", 
  			"location": "London",
  			"dates": "October 2010  - December 2010", 
- 			"description": "Admin support to the team who arranged event for BBC Radio"
+ 			"description": "Admin support to the team who arranged event for BBC Radio, including working on preperation for the Royal Wedding, Edinburgh Festival and Food and Farming awards"
  		} 		
  		]
  }
@@ -137,7 +137,7 @@ var projects = {
 			"title": "Third Woman Running", 
 			"dates" : "Spring 2016 - continuing", 
 			"description": "Blog about Women's Football in the UK",
-			"images" : "BLANK"
+			"images" : ["/images/3WR1.jpg", "/images/3WR2.jpg"]
 		}
 	]
 }
@@ -176,7 +176,7 @@ var education = {
 			"name": "Duchess' Community High School",
 			"location": "Alnwick, UK",
 			"degree": "A-levels",
-			"major": ["English Literature", "History", "Classical Civilisations"],
+			"major": ["English Literature", " History", " Classical Civilisations"],
 			"dates": "2003-2005"
 		}
 	],
