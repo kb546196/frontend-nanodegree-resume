@@ -137,7 +137,7 @@ var projects = {
 			"title": "Third Woman Running", 
 			"dates" : "Spring 2016 - continuing", 
 			"description": "Blog about Women's Football in the UK",
-			"images" : ["/images/3WR1.jpg", "/images/3WR2.jpg"]
+			"images" : ["images/3WR1.jpg", "images/3WR2.jpg"]
 		}
 	]
 }
@@ -155,13 +155,16 @@ function displayProjects () {
 		var formattedProjectDescription = HTMLprojectDescription.replace("%data%",projects.projects[project].description);
 		$("#projects").append(formattedProjectDescription);
 
-		var formattedProjectImages = HTMLprojectImage.replace("%data%",projects.projects[project].images);
-		$("#projects").append(formattedProjectImages);
+		var formattedProjectImage1 = HTMLprojectImage.replace("%data%",projects.projects[project].images[0]);
+		var formattedProjectImage2 = HTMLprojectImage.replace("%data%",projects.projects[project].images[1]);
+		$("#projects").append(formattedProjectImage1 + formattedProjectImage2);
 
 	}
 }
 
 displayProjects();
+
+
 
 var education = {
 	"schools": [
