@@ -26,7 +26,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #c9d8c5;
   line-height: 48px;
   display: inline;
 }
@@ -81,7 +81,7 @@ h5 {
 
 p {
   font-size: 14px;
-  color: #333;
+  color: #999;
   line-height: 21px;
 }
 
@@ -100,16 +100,16 @@ a {
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #c9d8c5;
   display: none;
 }
 
 .orange {
-  background-color: #f5ae23;
+  background-color: #c9d8c5;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #c9d8c5;
 }
 
 .white-text {
@@ -129,7 +129,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #a8b6bf;
 }
 
 .flex-box {
@@ -162,6 +162,7 @@ img {
 
 span {
   padding: 5px;
+  color: #999;
 }
 
 #lets-connect {
