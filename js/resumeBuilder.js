@@ -86,13 +86,13 @@ var work = {
 				$(".work-entry:last").append (formattedEmployerTitle);
 
 				var formattedworkLocation = HTMLworkLocation.replace("%data%",work.jobs[i].location);
-				$("#workExperience").append(formattedworkLocation);
+				$(".work-entry:last").append(formattedworkLocation);
 
 				var formattedworkDates = HTMLworkDates.replace("%data%",work.jobs[i].dates);
-				$("#workExperience").append(formattedworkDates);
+				$(".work-entry:last").append(formattedworkDates);
 
 				var formattedworkDescription = HTMLworkDescription.replace("%data%",work.jobs[i].description);
-				$("#workExperience").append(formattedworkDescription)
+				$(".work-entry:last").append(formattedworkDescription)
 	} 
 }
  }; 
