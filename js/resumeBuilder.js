@@ -147,7 +147,7 @@ var education = {
 			"name": "University of Sheffield",
 			"location": "Sheffield, UK",
 			"degree": "BA",
-			"major": ["English Literature", "History"],
+			"majors": ["English Literature"],
 			"dates": "2005-2008",
 			"url" : "http://www.sheffield.ac.uk/"
 		}, 
@@ -155,7 +155,7 @@ var education = {
 			"name": "Duchess' Community High School",
 			"location": "Alnwick, UK",
 			"degree": "A-levels",
-			"major": ["English Literature", " History", " Classical Civilisations"],
+			"majors": ["English Literature", " History", " Classical Civilisations"],
 			"dates": "2003-2005",
 			"url": "http://www.dchs-alnwick.org/"
 		}
@@ -173,7 +173,8 @@ var education = {
 			$("#education").append(HTMLschoolStart);
 
 			var formattedSchoolName = HTMLschoolName.replace("%data%",education.schools[i].name);
-			$(".education-entry:last").append(formattedSchoolName);
+			var formattedDegree = HTMLschoolDegree.replace("%data%",education.schools[i].degree);
+			$(".education-entry:last").append(formattedSchoolName + formattedDegree);
 
 			var formattedSchoolDates = HTMLschoolDates.replace("%data%",education.schools[i].dates);
 			$(".education-entry:last").append(formattedSchoolDates);		
@@ -181,11 +182,9 @@ var education = {
 			var formattedSchoolLocation = HTMLschoolLocation.replace("%data%",education.schools[i].location);
 			$(".education-entry:last").append(formattedSchoolLocation);
 
-			var formattedDegree = HTMLschoolDegree.replace("%data%",education.schools[i].degree);
-			$(".education-entry:last").append(formattedDegree);	
-
-			var formattedMajor = HTMLschoolMajor.replace("%data%",education.schools[i].major);
-			$(".education-entry:last").append(formattedMajor);
+				
+			var formattedMajors = HTMLschoolMajor.replace("%data%",education.schools[i].majors);
+			$(".education-entry:last").append(formattedMajors);
 		}
 		
 		for (var i = 0;  i < education.onlineCourses.length; i++) {
