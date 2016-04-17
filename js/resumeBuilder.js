@@ -96,7 +96,7 @@ var work = {
 				$(".work-entry:last").append(formattedworkDates);
 
 				var formattedworkDescription = HTMLworkDescription.replace("%data%",work.jobs[i].description);
-				$(".work-entry:last").append(formattedworkDescription)
+				$(".work-entry:last").append(formattedworkDescription);
 	} 
 }
  }; 
@@ -182,24 +182,21 @@ var education = {
 			var formattedSchoolLocation = HTMLschoolLocation.replace("%data%",education.schools[i].location);
 			$(".education-entry:last").append(formattedSchoolLocation);
 
-				
 			var formattedMajors = HTMLschoolMajor.replace("%data%",education.schools[i].majors);
 			$(".education-entry:last").append(formattedMajors);
 		}
 		
-		for (var i = 0;  i < education.onlineCourses.length; i++) {
+		for (var j = 0;  j < education.onlineCourses.length; j++) {
 			$(".education-entry:last").append(HTMLonlineClasses);
-		
-			var formattedOnlineSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses[i].school);
-			$(".education-entry:last").append(formattedOnlineSchool); 
+			
+			var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[j].title);
+			var formattedOnlineSchool = HTMLonlineSchool.replace("%data%",education.onlineCourses[j].school);
+			$(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool); 
 
-			var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
-			$(".education-entry:last").append(formattedOnlineTitle);
-
-			var formattedOnlineDate = HTMLonlineDates.replace("%data%",education.onlineCourses[i].date);
+			var formattedOnlineDate = HTMLonlineDates.replace("%data%",education.onlineCourses[j].date);
 			$(".education-entry:last").append(formattedOnlineDate);
 
-			var formattedOnlineURL = HTMLonlineURL.replace("%data%",education.onlineCourses[i].url); 
+			var formattedOnlineURL = HTMLonlineURL.replace("%data%",education.onlineCourses[j].url); 
 			$(".education-entry:last").append(formattedOnlineURL);
 		}
 	}
@@ -214,8 +211,8 @@ function inName(name) {
 	name = bio.name.trim().split(" ");
 	console.log(name);
 	name[1] = name[1].toUpperCase();
-	name[0] = name[0].slice(0,1).toUpperCase() 
-	+ name[0].slice(1).toLowerCase();
+	name[0] = name[0].slice(0,1).toUpperCase(); 
+	name[0].slice(1).toLowerCase();
 
 	return name[0] + " " + name[1];  
 }
@@ -227,8 +224,8 @@ $("#main").append(internationalizeButton);
 function locationizer(work_obj)   { 
 	var locationArray = [];
 
-	for (job in work_obj.jobs) {
-		var newLocation = work_obj.jobs[job].location; 
+	for (var i = 0;  i < work.jobs.length; i++)  {
+		var newLocation = work_obj.jobs[i].location; 
 		locationArray.push(newLocation);
 	}
 
