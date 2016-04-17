@@ -31,7 +31,11 @@ var bio = {
 			$ ("#topContacts").append(formattedEmail);
 			$ ("#topContacts").append(formattedGitHub); 
 			$ ("#topContacts").append(formattedMobile); 
-			
+			$ ("#footerContacts").append(formattedLocation);
+			$ ("#footerContacts").append(formattedEmail);
+			$ ("#footerContacts").append(formattedGitHub);
+			$ ("#footerContacts").append(formattedMobile);
+
 			$("#header").append(HTMLskillsStart);
 				for (var i = 0; i < bio.skills.length; i++) {
 				var formattedSkill = HTMLskills.replace("%data%",bio.skills[i]);
@@ -143,22 +147,24 @@ var education = {
 			"name": "University of Sheffield",
 			"location": "Sheffield, UK",
 			"degree": "BA",
-			"major": ["English Literature"],
-			"dates": "2005-2008"
+			"major": ["English Literature", "History"],
+			"dates": "2005-2008",
+			"url" : "http://www.sheffield.ac.uk/"
 		}, 
 		{
 			"name": "Duchess' Community High School",
 			"location": "Alnwick, UK",
 			"degree": "A-levels",
 			"major": ["English Literature", " History", " Classical Civilisations"],
-			"dates": "2003-2005"
+			"dates": "2003-2005",
+			"url": "http://www.dchs-alnwick.org/"
 		}
 	],
 	"onlineCourses": [
 		{
 			"school": "Udacity", 
 			"title": "Front End Web Design",
-			"dates": 2016, 
+			"date": "2016", 
 			"url" : "www.udacity.com" 
 		}
 	], 
@@ -169,7 +175,7 @@ var education = {
 			var formattedSchoolName = HTMLschoolName.replace("%data%",education.schools[i].name);
 			$(".education-entry:last").append(formattedSchoolName);
 
-			var formattedSchoolDates = HTMLschoolLocation.replace("%data%",education.schools[i].dates);
+			var formattedSchoolDates = HTMLschoolDates.replace("%data%",education.schools[i].dates);
 			$(".education-entry:last").append(formattedSchoolDates);		
 
 			var formattedSchoolLocation = HTMLschoolLocation.replace("%data%",education.schools[i].location);
@@ -181,6 +187,7 @@ var education = {
 			var formattedMajor = HTMLschoolMajor.replace("%data%",education.schools[i].major);
 			$(".education-entry:last").append(formattedMajor);
 		}
+		
 		for (var i = 0;  i < education.onlineCourses.length; i++) {
 			$(".education-entry:last").append(HTMLonlineClasses);
 		
@@ -190,8 +197,8 @@ var education = {
 			var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
 			$(".education-entry:last").append(formattedOnlineTitle);
 
-			var formattedOnlineDates = HTMLonlineDates.replace("%data%",education.onlineCourses[i].dates);
-			$(".education-entry:last").append(formattedOnlineDates);
+			var formattedOnlineDate = HTMLonlineDates.replace("%data%",education.onlineCourses[i].date);
+			$(".education-entry:last").append(formattedOnlineDate);
 
 			var formattedOnlineURL = HTMLonlineURL.replace("%data%",education.onlineCourses[i].url); 
 			$(".education-entry:last").append(formattedOnlineURL);
